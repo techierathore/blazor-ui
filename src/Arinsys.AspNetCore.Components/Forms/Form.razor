@@ -1,0 +1,16 @@
+﻿@typeparam TEntity
+@typeparam TFormDefinition
+@inherits BaseComponent
+
+@if (Data == null)
+{
+    <h2>Loading</h2>
+}
+else
+{
+    <EditForm Model="Data" OnValidSubmit="(context) => OnValidSubmit(context, Data)" OnInvalidSubmit="(context) => OnInvalidSubmit?.Invoke(context, Data)" class="@CssClass">
+        <DataAnnotationsValidator />
+
+        @ChildContent(Data)
+    </EditForm>
+}

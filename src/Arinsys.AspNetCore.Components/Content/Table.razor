@@ -1,0 +1,28 @@
+﻿@typeparam TEntity
+@typeparam TColumnDefinition
+@typeparam TTableDataFilters
+@inherits BaseComponent
+
+@if (Data == null)
+{
+    <h2>Loading</h2>
+}
+else
+{
+    <table class="@CssClass">
+        <thead>
+            <tr>
+                @foreach (var columnDefinition in ColumnDefinitions)
+                {
+                    <th>@columnDefinition.Label</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rowData in Data)
+            {
+                @Body(rowData)
+            }
+        </tbody>
+    </table>
+}

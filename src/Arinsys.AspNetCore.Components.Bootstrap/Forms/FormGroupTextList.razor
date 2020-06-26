@@ -1,0 +1,22 @@
+﻿@inherits BaseFormGroup<List<string>>
+
+<div class="form-group @( GridColumnSpan == GridColumnSpan.Auto ? "col" : $"col-{(int)GridColumnSpan}" )">
+    <label>@Label</label>
+    @for (int i = 0; i < Values?.Count; i++)
+    {
+        int index = i;
+        <div class="input-group">
+            <input type="text" class="form-control @( ValidationMessages.Any() ? "is-invalid" : "")" placeholder="@Placeholder" value="@Values[index]" @oninput="e => OnValueChanged(e, index)" />
+            <span class="input-group-append">
+                <button type="button" class="btn btn-primary" @onclick="() => OnValueDeleted(index)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </span>
+        </div>
+    }
+    <button type="button" class="btn btn-primary" @onclick="OnValueAdded">Add</button>
+    @foreach (var message in ValidationMessages)
+    {
+        <div class="invalid-feedback">@message</div>
+    }
+</div>

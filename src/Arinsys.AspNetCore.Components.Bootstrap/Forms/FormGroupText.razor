@@ -1,0 +1,27 @@
+﻿@inherits BaseFormGroup<string>
+
+<div class="form-group @( GridColumnSpan == GridColumnSpan.Auto ? "col" : $"col-{(int)GridColumnSpan}" )">
+    <label>@Label</label>
+    <div class="input-group">
+        @if (!string.IsNullOrWhiteSpace(InputPrepend))
+        {
+            <div class="input-group-prepend">
+                <span class="input-group-text">@InputPrepend</span>
+            </div>
+        }
+        <input type="text" class="form-control @( IsModified && ValidationMessages.Any() ? "is-invalid" : "")" placeholder="@Placeholder" value="@Value" @oninput="OnValueChanged" />
+        @if (!string.IsNullOrWhiteSpace(InputAppend))
+        {
+            <div class="input-group-append">
+                <span class="input-group-text">@InputAppend</span>
+            </div>
+        }
+    </div>
+    @if (IsModified && ValidationMessages.Any())
+    {
+        @foreach (var message in ValidationMessages)
+        {
+            <div class="invalid-feedback">@message</div>
+        }
+    }
+</div>
