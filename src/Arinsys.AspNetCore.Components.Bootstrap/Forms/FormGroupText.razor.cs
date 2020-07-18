@@ -1,11 +1,6 @@
-﻿using Arinsys.AspNetCore.Components.Forms;
-
+﻿
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Arinsys.AspNetCore.Components.Bootstrap.Forms
