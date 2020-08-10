@@ -1,0 +1,25 @@
+parameters:
+  projectName: ''
+  majorVersion: ''
+  minorVersion: ''
+  patchVersion: ''
+
+steps:
+  # - task: DotNetCoreCLI@2
+  #   displayName: 'Run tests on all .net core test projects'
+  #   inputs:
+  #     command: test
+  #     projects: '**/*Tests*.csproj'
+  #     arguments: '--configuration  $(BuildConfiguration) --collect "Code coverage"'
+
+  # publish .net core web projects artifacts
+  - task: DotNetCoreCLI@2
+    displayName: 'Pack ${{ parameters.projectName }} project'
+    inputs:
+      command: 'pack'
+      packagesToPack: 'src/${{ parameters.projectName }}/${{ parameters.projectName }}.csproj'
+      arguments: '/p:AssemblyVersion=${{ parameters.majorVersion }}.${{ parameters.minorVersion }}.${{ parameters.patchVersion }}'
+      versioningScheme: 'byPrereleaseNumber'
+      majorVersion: ${{ parameters.majorVersion }}
+      minorVersion: ${{ parameters.minorVersion }}
+      patchVersion: ${{ parameters.patchVersion }}
