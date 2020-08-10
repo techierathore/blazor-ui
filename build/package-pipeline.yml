@@ -23,3 +23,11 @@ steps:
       majorVersion: ${{ parameters.majorVersion }}
       minorVersion: ${{ parameters.minorVersion }}
       patchVersion: ${{ parameters.patchVersion }}
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Publish ${{ parameters.projectName }} nuget package'
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/${{ parameters.projectName }}*.nupkg'
+      nuGetFeedType: 'internal'
+      publishVstsFeed: '$(VSTS_FEED)'
