@@ -1,0 +1,20 @@
+trigger:
+  branches:
+    include:
+      - dev-*
+  paths:
+    include:
+      - src/Arinsys.AspNetCore.Components.Bootstrap/*
+      - build/bootstrap.yml
+
+pool: 'Default Self Hosted'
+variables:
+  BuildConfiguration: Release
+
+steps:
+  - template: package-pipeline.yml
+    parameters:
+      projectName: 'Arinsys.AspNetCore.Components.Bootstrap'
+      majorVersion: '1'
+      minorVersion: '0'
+      patchVersion: '0'
