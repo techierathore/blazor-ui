@@ -1,17 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <LangVersion>latest</LangVersion>
+    <Authors>Abhishek Siddhu</Authors>
+    <Company>Arinsys</Company>
+    <Product>Arinsys.AspNetCore.Components.Bootstrap</Product>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Arinsys.AspNetCore.Components" Version="1.0.0-CI-20200810-162024" Condition="'$(Configuration)'=='Release'" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.0-preview.6.20312.15" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.0-preview.6.20312.15" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Arinsys.AspNetCore.Components\Arinsys.AspNetCore.Components.csproj" />
+    <ProjectReference Include="..\Arinsys.AspNetCore.Components\Arinsys.AspNetCore.Components.csproj" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
 
 </Project>
