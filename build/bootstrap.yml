@@ -4,7 +4,7 @@ trigger:
       - dev-*
   paths:
     include:
-      - src/Arinsys.AspNetCore.Components.Bootstrap/*
+      - src/Arinsys.Components.AspNetCore.Bootstrap/*
       - build/bootstrap.yml
 
 pool: 'Default Self Hosted'
@@ -14,7 +14,7 @@ variables:
 steps:
   - template: package-pipeline.yml
     parameters:
-      projectName: 'Arinsys.AspNetCore.Components.Bootstrap'
+      projectName: 'Arinsys.Components.AspNetCore.Bootstrap'
       majorVersion: '1'
       minorVersion: '0'
       patchVersion: '0'
