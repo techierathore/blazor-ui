@@ -1,7 +1,10 @@
 ﻿<Project>
   <PropertyGroup>
+    <Authors>Arinsys</Authors>
     <LangVersion>latest</LangVersion>
+    <TargetFramework>net5.0</TargetFramework>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Copyright>© Arinsys Enterprise Solutions Private Limited. All Rights Reserved</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
