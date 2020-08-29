@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Arinsys.AspNetCore.Components
+namespace Arinsys.Components.AspNetCore
 {
     public class NavItem
     {

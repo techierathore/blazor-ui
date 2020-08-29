@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.Forms;
 
 using System.Collections.Generic;
 
-namespace Arinsys.AspNetCore.Components.Forms
+namespace Arinsys.Components.AspNetCore.Forms
 {
     public abstract class BaseFormGroup<TValue> : BaseComponent, IFormGroup<TValue>
     {

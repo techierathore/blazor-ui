@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Reactive.Linq;
 
-namespace Arinsys.AspNetCore.Components.Content
+namespace Arinsys.Components.AspNetCore.Content
 {
     public class ColumnDefinition<TEntity>
     {

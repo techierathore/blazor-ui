@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Arinsys.AspNetCore.Components
+namespace Arinsys.Components.AspNetCore
 {
     public class BaseComponent : ComponentBase, IDisposable
     {

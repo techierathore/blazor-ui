@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace Arinsys.AspNetCore.Components.Forms
+namespace Arinsys.Components.AspNetCore.Forms
 {
     public interface IFormGroup
     {
