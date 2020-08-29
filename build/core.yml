@@ -4,7 +4,7 @@ trigger:
       - dev-*
   paths:
     include:
-      - src/Arinsys.AspNetCore.Components/*
+      - src/Arinsys.Components.AspNetCore/*
       - build/core.yml
 
 pool: 'Default Self Hosted'
@@ -14,7 +14,7 @@ variables:
 steps:
   - template: package-pipeline.yml
     parameters:
-      projectName: 'Arinsys.AspNetCore.Components'
+      projectName: 'Arinsys.Components.AspNetCore'
       majorVersion: '1'
       minorVersion: '0'
       patchVersion: '0'
