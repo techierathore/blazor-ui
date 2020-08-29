@@ -1,9 +1,8 @@
-﻿
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 using System.Threading.Tasks;
 
-namespace Arinsys.AspNetCore.Components.Bootstrap.Forms
+namespace Arinsys.Components.AspNetCore.Bootstrap.Forms
 {
     public partial class FormGroupText : BaseFormGroup<string>
     {

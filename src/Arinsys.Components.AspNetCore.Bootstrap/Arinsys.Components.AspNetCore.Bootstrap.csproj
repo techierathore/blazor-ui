@@ -12,12 +12,12 @@
   <Choose>
     <When Condition="'$(Configuration)'=='Release'">
       <ItemGroup>
-        <PackageReference Include="Arinsys.AspNetCore.Components" Version="1.0.0-CI-20200810-162024" />
+        <PackageReference Include="Arinsys.Components.AspNetCore" Version="1.0.0*" />
       </ItemGroup>
     </When>
     <When Condition="'$(Configuration)'=='Debug'">
       <ItemGroup>
-        <ProjectReference Include="..\Arinsys.AspNetCore.Components\Arinsys.AspNetCore.Components.csproj" />
+        <ProjectReference Include="..\Arinsys.Components.AspNetCore\Arinsys.Components.AspNetCore.csproj" />
       </ItemGroup>
     </When>
   </Choose>

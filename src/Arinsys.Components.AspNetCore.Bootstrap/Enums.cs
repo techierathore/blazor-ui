@@ -1,4 +1,4 @@
-﻿namespace Arinsys.AspNetCore.Components.Bootstrap
+﻿namespace Arinsys.Components.AspNetCore.Bootstrap
 {
     public enum GridColumnSpan
     {
