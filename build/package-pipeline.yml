@@ -1,14 +1,15 @@
 parameters:
   projectName: ''
-  majorVersion: ''
-  minorVersion: ''
-  patchVersion: ''
+  projectRoot: ''
+  buildVersion: ''
+  buildConfiguration: ''
 
 steps:
   - task: DotNetCoreCLI@2
     displayName: 'Restore Nuget packages for ${{ parameters.projectName }} project'
     inputs:
       command: 'restore'
+      noCache: true
       projects: 'src/${{ parameters.projectName }}/${{ parameters.projectName }}.csproj'
       feedsToUse: 'select'
       vstsFeed: '$(VSTS_FEED)'
@@ -24,13 +25,15 @@ steps:
   - task: DotNetCoreCLI@2
     displayName: 'Pack ${{ parameters.projectName }} project'
     inputs:
-      command: 'pack'
-      packagesToPack: 'src/${{ parameters.projectName }}/${{ parameters.projectName }}.csproj'
-      arguments: '/p:AssemblyVersion=${{ parameters.majorVersion }}.${{ parameters.minorVersion }}.${{ parameters.patchVersion }}'
-      versioningScheme: 'byPrereleaseNumber'
-      majorVersion: ${{ parameters.majorVersion }}
-      minorVersion: ${{ parameters.minorVersion }}
-      patchVersion: ${{ parameters.patchVersion }}
+      command: 'custom'
+      custom: 'pack'
+      projects: 'src/${{ parameters.projectName }}/${{ parameters.projectName }}.csproj'
+      arguments: >-
+        --interactive 
+        --output "$(Build.ArtifactStagingDirectory)"
+        /p:Configuration=${{ parameters.buildConfiguration }} 
+        /p:AssemblyVersion=${{ parameters.buildVersion }} 
+        /p:PackageVersion="${{ parameters.buildVersion }}" 
 
   - task: DotNetCoreCLI@2
     displayName: 'Publish ${{ parameters.projectName }} nuget package'
