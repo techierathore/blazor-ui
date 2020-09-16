@@ -6,15 +6,27 @@ trigger:
     include:
       - src/Arinsys.Components.AspNetCore.Bootstrap/*
       - build/bootstrap.yml
+      - build/package-pipeline.yml
 
 pool: 'Default Self Hosted'
 variables:
   BuildConfiguration: Release
+  version.MajorMinor: '0.0' # Manually adjust the version number as needed for semantic versioning. Revision is auto-incremented.
+  version.Revision: $[counter(variables['version.MajorMinor'], 0)]
+  versionNumber: '$(version.MajorMinor).$(version.Revision)'
 
 steps:
+  - task: PowerShell@2
+    displayName: Set the name of the build (i.e. the Build.BuildNumber)
+    inputs:
+      targetType: 'inline'
+      script: |
+        [string] $buildName = "$(versionNumber)_$(Build.SourceBranchName)"
+        Write-Host "Setting the name of the build to '$buildName'."
+        Write-Host "##vso[build.updatebuildnumber]$buildName"
+
   - template: package-pipeline.yml
     parameters:
       projectName: 'Arinsys.Components.AspNetCore.Bootstrap'
-      majorVersion: '1'
-      minorVersion: '0'
-      patchVersion: '0'
+      buildVersion: '$(versionNumber)'
+      buildConfiguration: $(BuildConfiguration)
