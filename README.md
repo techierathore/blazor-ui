@@ -1,23 +1,21 @@
 # Components/Plugins for Blazor
-Blazor UI is a lightweight, extensible, open-source and cross-platform component library for building modern applications built on top of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), [Reactive Extensions for .NET](https://github.com/dotnet/reactive) and CSS frameworks like [Bootstrap](https://getbootstrap.com/), [Bulma](https://bulma.io/) and Material. It is created to provide an optimized development framework for apps that are built in Blazor. It consists of modular components with minimal overhead, so you retain flexibility while constructing your solutions. 
 
-## Demos
+Blazor UI is a lightweight, extensible, open-source and cross-platform component library for building modern applications built on top of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), [Reactive Extensions for .NET](https://github.com/dotnet/reactive) and CSS frameworks like [Bootstrap](https://getbootstrap.com/), [Bulma](https://bulma.io/) and Material. It is created to provide an optimized development framework for apps that are built in Blazor. It consists of modular components with minimal overhead, so you retain flexibility while constructing your solutions.
 
-### Blazor WebAssembly
+## Resources
 
-- Bootstrap Demo(Coming Soon)
-- Material Demo(Coming Soon)
-- Bulma Demo(Coming Soon)
+### Blazor UI Core
 
-### Blazor Server
+- Dev Build [![Arinsys.Components.AspNetCore package in public feed in Azure Artifacts](https://feeds.dev.azure.com/arinsys/b06546a9-49eb-44a3-97a8-519ec7ab2744/_apis/public/Packaging/Feeds/6372e361-3831-4524-b594-0af8130c0d7c/Packages/a089d9f3-2d3d-4059-8658-8f402b8b7c69/Badge)](https://dev.azure.com/arinsys/public/_packaging?_a=package&feed=6372e361-3831-4524-b594-0af8130c0d7c&package=a089d9f3-2d3d-4059-8658-8f402b8b7c69&preferRelease=true)
 
-- Bootstrap Demo(Coming Soon)
+### Blazor UI Bootstrap
+
+- Dev Build [![Arinsys.Components.AspNetCore.Bootstrap package in public feed in Azure Artifacts](https://feeds.dev.azure.com/arinsys/b06546a9-49eb-44a3-97a8-519ec7ab2744/_apis/public/Packaging/Feeds/6372e361-3831-4524-b594-0af8130c0d7c/Packages/466fcf1a-91d5-407a-b064-c52a79d86485/Badge)](https://dev.azure.com/arinsys/public/_packaging?_a=package&feed=6372e361-3831-4524-b594-0af8130c0d7c&package=466fcf1a-91d5-407a-b064-c52a79d86485&preferRelease=true)
+- Demo (Coming Soon)
 
 ```
 Note: This project is still in initial stages so it's possible that some components will be removed or refactored.
 ```
-
-Releases(Coming Soon) and Roadmap(Coming Soon)
 
 ## Prerequisites
 
@@ -34,14 +32,15 @@ Also check out the Blazor UI Homepage(Coming Soon) for released versions of Blaz
 Some of the best ways to contribute are to try things out, file issues, join in design conversations,
 and make pull-requests.
 
+- Check out the [contributing](https://github.com/abhisheksiddhu/blazor-ui/wiki/Contribution-Guidelines) page to see the best places to log issues and start discussions.
+- [Roadmap](https://github.com/abhisheksiddhu/blazor-ui/wiki/Roadmap): The schedule and milestone themes for Blazor UI.
+<!-- - [Download our latest dev builds](./docs/DailyBuilds.md) -->
+
 <!--
-* [Download our latest daily builds](./docs/DailyBuilds.md)
 * Follow along with the development of Blazor UI:
     * [Community Standup](Coming Soon): The community standup is held every week and streamed live to YouTube. You can view past standups in the linked playlist.
-    * [Roadmap](Coming Soon): The schedule and milestone themes for Blazor UI.
 * [Build Blazor UI source code](./docs/BuildFromSource.md)
 -->
-* Check out the [contributing](CONTRIBUTING.md) page to see the best places to log issues and start discussions.
 
 <!--
 ## Reporting security issues and bugs
