@@ -12,7 +12,7 @@
   <Choose>
     <When Condition="'$(Configuration)'=='Release'">
       <ItemGroup>
-        <PackageReference Include="Arinsys.Components.AspNetCore" Version="0.0.0" />
+        <PackageReference Include="Arinsys.Components.AspNetCore" Version="0.0.2" />
       </ItemGroup>
     </When>
     <When Condition="'$(Configuration)'=='Debug'">
