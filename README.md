@@ -4,14 +4,11 @@ Blazor UI is a lightweight, extensible, open-source and cross-platform component
 
 ## Resources
 
-### Blazor UI Core
-
 - Dev Build [![Arinsys.Components.AspNetCore package in public feed in Azure Artifacts](https://feeds.dev.azure.com/arinsys/b06546a9-49eb-44a3-97a8-519ec7ab2744/_apis/public/Packaging/Feeds/6372e361-3831-4524-b594-0af8130c0d7c/Packages/a089d9f3-2d3d-4059-8658-8f402b8b7c69/Badge)](https://dev.azure.com/arinsys/public/_packaging?_a=package&feed=6372e361-3831-4524-b594-0af8130c0d7c&package=a089d9f3-2d3d-4059-8658-8f402b8b7c69&preferRelease=true)
 
-### Blazor UI Bootstrap
-
-- Dev Build [![Arinsys.Components.AspNetCore.Bootstrap package in public feed in Azure Artifacts](https://feeds.dev.azure.com/arinsys/b06546a9-49eb-44a3-97a8-519ec7ab2744/_apis/public/Packaging/Feeds/6372e361-3831-4524-b594-0af8130c0d7c/Packages/466fcf1a-91d5-407a-b064-c52a79d86485/Badge)](https://dev.azure.com/arinsys/public/_packaging?_a=package&feed=6372e361-3831-4524-b594-0af8130c0d7c&package=466fcf1a-91d5-407a-b064-c52a79d86485&preferRelease=true)
-- Demo (Coming Soon)
+- Bootstrap Demo(Coming Soon)
+- Material Demo(Coming Soon)
+- Bulma Demo(Coming Soon)
 
 ```
 Note: This project is still in initial stages so it's possible that some components will be removed or refactored.

@@ -6,7 +6,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading.Tasks;
 
-namespace Arinsys.Components.AspNetCore.Content
+namespace Arinsys.Components.AspNetCore.Tables
 {
     public class ColumnDefinition<TEntity>
     {
