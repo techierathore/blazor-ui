@@ -24,5 +24,8 @@ namespace Arinsys.Components.AspNetCore.Forms
 
         [Parameter]
         public RenderFragment<TEntity> ChildContent { get; set; }
+
+        [Parameter]
+        public RenderFragment LoadingContent { get; set; }
     }
 }

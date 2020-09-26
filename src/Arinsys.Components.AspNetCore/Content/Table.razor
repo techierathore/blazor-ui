@@ -5,16 +5,30 @@
 
 @if (Data == null)
 {
-    <h2>Loading</h2>
+    @if (LoadingContent is null)
+    {
+        <h2>Loading</h2>
+    }
+    else
+    {
+        @LoadingContent
+    }
 }
 else
 {
     <table class="@CssClass">
         <thead>
             <tr>
-                @foreach (var columnDefinition in ColumnDefinitions)
+                @if (HeadContent is null)
                 {
-                    <th>@columnDefinition.Label</th>
+                    @foreach (var columnDefinition in ColumnDefinitions)
+                    {
+                        <th>@columnDefinition.Label</th>
+                    }
+                }
+                else
+                {
+                    @HeadContent
                 }
             </tr>
         </thead>

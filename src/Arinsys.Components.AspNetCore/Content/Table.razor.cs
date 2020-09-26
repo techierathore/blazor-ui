@@ -33,6 +33,9 @@ namespace Arinsys.Components.AspNetCore.Content
         [Parameter]
         public RenderFragment<TEntity> Body { get; set; }
 
+        [Parameter]
+        public RenderFragment LoadingContent { get; set; }
+
         protected IEnumerable<TEntity> Data { get; private set; }
         protected TTableDataFilters Filters { get; set; }
 

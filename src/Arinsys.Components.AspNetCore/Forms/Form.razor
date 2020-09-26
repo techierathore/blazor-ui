@@ -4,7 +4,14 @@
 
 @if (Data == null)
 {
-    <h2>Loading</h2>
+    @if (LoadingContent is null)
+    {
+        <h2>Loading</h2>
+    }
+    else
+    {
+        @LoadingContent
+    }
 }
 else
 {
