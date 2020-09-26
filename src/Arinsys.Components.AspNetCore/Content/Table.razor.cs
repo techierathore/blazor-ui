@@ -34,6 +34,9 @@ namespace Arinsys.Components.AspNetCore.Content
         public RenderFragment<TEntity> Body { get; set; }
 
         [Parameter]
+        public RenderFragment HeadContent { get; set; }
+
+        [Parameter]
         public RenderFragment LoadingContent { get; set; }
 
         protected IEnumerable<TEntity> Data { get; private set; }
