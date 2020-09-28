@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCore", "src\Arinsys.Components.AspNetCore\Arinsys.Components.AspNetCore.csproj", "{381C6C0A-FEE3-4B78-9F36-3F272EB1FBB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCore.Samples.Bootstrap", "docs\bootstrap\Arinsys.Components.AspNetCore.Samples.Bootstrap\Arinsys.Components.AspNetCore.Samples.Bootstrap.csproj", "{594F10BE-D620-4FA3-B72E-73A893E69AA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCore.Samples.Bootstrap", "src\Arinsys.Components.AspNetCore.Samples.Bootstrap\Arinsys.Components.AspNetCore.Samples.Bootstrap.csproj", "{F462A6E4-4C3C-4AEA-88B4-02ED47603514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{381C6C0A-FEE3-4B78-9F36-3F272EB1FBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{381C6C0A-FEE3-4B78-9F36-3F272EB1FBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{381C6C0A-FEE3-4B78-9F36-3F272EB1FBB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{594F10BE-D620-4FA3-B72E-73A893E69AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{594F10BE-D620-4FA3-B72E-73A893E69AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{594F10BE-D620-4FA3-B72E-73A893E69AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{594F10BE-D620-4FA3-B72E-73A893E69AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F462A6E4-4C3C-4AEA-88B4-02ED47603514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F462A6E4-4C3C-4AEA-88B4-02ED47603514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F462A6E4-4C3C-4AEA-88B4-02ED47603514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F462A6E4-4C3C-4AEA-88B4-02ED47603514}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
