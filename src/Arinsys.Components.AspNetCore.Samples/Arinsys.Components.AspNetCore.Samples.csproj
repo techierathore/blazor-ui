@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="31.0.2" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Arinsys.Components.AspNetCore\Arinsys.Components.AspNetCore.csproj" />
+  </ItemGroup>
+</Project>

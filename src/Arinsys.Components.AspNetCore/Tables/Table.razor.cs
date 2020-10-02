@@ -42,8 +42,10 @@ namespace Arinsys.Components.AspNetCore.Tables
 
         public IObservable<TTableDataFilters> FiltersObservable => filtersObservable.Select(_ => TableDataFilters);
         public TTableDataFilters TableDataFilters { get; private set; } = new TTableDataFilters();
-        public void TableDataFiltersUpdated() => filtersObservable.OnNext(null);
-
+        public void TableDataFiltersUpdated()
+        {
+            filtersObservable.OnNext(null);
+        }
 
         protected IEnumerable<TEntity> Data { get; private set; }
         protected TTableDataFilters Filters { get; set; }
@@ -51,7 +53,10 @@ namespace Arinsys.Components.AspNetCore.Tables
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            if (DataAccessor != null) Data = await DataAccessor(Filters);
+            if (DataAccessor != null)
+            {
+                Data = await DataAccessor(Filters);
+            }
         }
     }
 }
