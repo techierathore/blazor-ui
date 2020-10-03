@@ -1,0 +1,26 @@
+﻿@page "/tables"
+@using Arinsys.Components.AspNetCore.Bootstrap.Tables
+@using Arinsys.Components.AspNetCore.Samples.Models
+@using Arinsys.Components.AspNetCore.Samples.Fakes
+
+<Table DataAccessor="_=> Task.FromResult(users)" TEntity="User" TTableDataFilters="Arinsys.Components.AspNetCore.Tables.TableDataFilters<User>" TColumnDefinition="Arinsys.Components.AspNetCore.Tables.ColumnDefinition<User>">
+    <HeadContent>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </HeadContent>
+    <Body>
+        <tr>
+            <td>@context.Id</td>
+            <td>@context.Name</td>
+            <td>@context.Email</td>
+        </tr>
+    </Body>
+</Table>
+
+@code{
+    
+    IEnumerable<User> users = FakeUser.ValidDefaults.Generate(10);
+}

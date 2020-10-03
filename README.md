@@ -29,8 +29,8 @@ Also check out the Blazor UI Homepage(Coming Soon) for released versions of Blaz
 Some of the best ways to contribute are to try things out, file issues, join in design conversations,
 and make pull-requests.
 
-- Check out the [contributing](https://github.com/abhisheksiddhu/blazor-ui/wiki/Contribution-Guidelines) page to see the best places to log issues and start discussions.
-- [Roadmap](https://github.com/abhisheksiddhu/blazor-ui/wiki/Roadmap): The schedule and milestone themes for Blazor UI.
+- Check out the [contributing](./docs/Contribution-Guidelines) page to see the best places to log issues and start discussions.
+- [Roadmap](./docs/Roadmap): The schedule and milestone themes for Blazor UI.
 <!-- - [Download our latest dev builds](./docs/DailyBuilds.md) -->
 
 <!--

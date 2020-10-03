@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCore.Samples.Bootstrap", "src\Arinsys.Components.AspNetCore.Samples.Bootstrap\Arinsys.Components.AspNetCore.Samples.Bootstrap.csproj", "{F462A6E4-4C3C-4AEA-88B4-02ED47603514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arinsys.Components.AspNetCore.Samples", "src\Arinsys.Components.AspNetCore.Samples\Arinsys.Components.AspNetCore.Samples.csproj", "{E83189DB-BB8C-4953-AAAB-C339373D8D5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCore.Samples", "src\Arinsys.Components.AspNetCore.Samples\Arinsys.Components.AspNetCore.Samples.csproj", "{E83189DB-BB8C-4953-AAAB-C339373D8D5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
