@@ -72,7 +72,8 @@ After the development for all the features is done in the milestone dev branch i
 ## Branching Policies
 
 - All branches will be deleted as soon as it gets merged back to its parent branch
-- All code to the `main` trunk branch can only go through a Pull request to facilitate code review and prevent accidental check-ins
+- All code to the current `dev-*` branch from non-maintainers can only go through a Pull request to facilitate code review
+- All code to the `main` trunk branch can only go through a Pull request to prevent accidental check-ins
 - Pull Requests to master branch can be self-approved by maintainers.
 - All Pull Requests will do a squash merge.
 - Every commit in the main trunk branch represents a major or minor release.
