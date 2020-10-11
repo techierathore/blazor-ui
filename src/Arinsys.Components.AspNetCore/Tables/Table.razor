@@ -2,28 +2,30 @@
 @typeparam TTableDataFilters
 @inherits BaseComponent
 
-@if (Data == null)
+@if (Data is null)
 {
-    @if (LoadingContent is null)
+    @if (Loading is not null)
     {
-        <h2>Loading</h2>
-    }
-    else
-    {
-        @LoadingContent
+        @Loading
     }
 }
 else
 {
     <table class="@CssClass">
-        <thead>
-            @HeadContent
-        </thead>
-        <tbody>
-            @foreach (var rowData in Data)
-            {
-                @Body(rowData)
-            }
-        </tbody>
+        @if (Head is not null)
+        {
+            <thead>
+                @Head
+            </thead>
+        }
+        @if (Body is not null)
+        {
+            <tbody>
+                @foreach (var rowData in Data)
+                {
+                    @Body(rowData)
+                }
+            </tbody>
+        }
     </table>
 }
