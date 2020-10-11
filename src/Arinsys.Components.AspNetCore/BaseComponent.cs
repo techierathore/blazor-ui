@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Arinsys.Components.AspNetCore
 {
@@ -11,20 +12,30 @@ namespace Arinsys.Components.AspNetCore
         /// Gets a list of CSS classes that gets combined and added to the <c>class</c> attribute. Derived components should 
         /// typically use this value to override the primary HTML element's 'class' attribute.
         /// </summary>
-        public List<string> ComponentCssClasses { get; private set; } = new List<string>();
+        public ObservableCollection<string> ComponentCssClasses { get; private set; } = new ObservableCollection<string>();
 
         /// <summary>
         /// Gets a CSS class string that combines the <see cref="ComponentCssClasses"/>
         /// properties. Derived components should typically use this value for the primary HTML element's
         /// 'class' attribute.
         /// </summary>
-        public string CssClass => string.Join(" ", ComponentCssClasses);
+        public string CssClass { get; private set; }
 
         private readonly List<IDisposable> subscriptions = new List<IDisposable>();
 
         protected void ChangeStateOn(IObservable<object> observable)
         {
             subscriptions.Add(observable.Subscribe(onNext: async nextValue => await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false)));
+        }
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            ComponentCssClasses.CollectionChanged += (_, __) =>
+            {
+                CssClass = string.Join(" ", ComponentCssClasses);
+                StateHasChanged();
+            };
         }
 
         #region IDisposable Support
