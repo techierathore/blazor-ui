@@ -3,8 +3,9 @@
     public partial class Table<TEntity, TTableDataFilters> : AspNetCore.Tables.Table<TEntity, TTableDataFilters>
         where TTableDataFilters : AspNetCore.Tables.TableDataFilters<TEntity>, new()
     {
-        public Table()
+        protected override void OnInitialized()
         {
+            base.OnInitialized();
             ComponentCssClasses.Add("table");
         }
     }
