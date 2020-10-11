@@ -23,19 +23,18 @@ namespace Arinsys.Components.AspNetCore
 
         private readonly List<IDisposable> subscriptions = new List<IDisposable>();
 
-        protected void ChangeStateOn(IObservable<object> observable)
+        public BaseComponent()
         {
-            subscriptions.Add(observable.Subscribe(onNext: async nextValue => await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false)));
-        }
-
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
             ComponentCssClasses.CollectionChanged += (_, __) =>
             {
                 CssClass = string.Join(" ", ComponentCssClasses);
                 StateHasChanged();
             };
+        }
+
+        protected void ChangeStateOn(IObservable<object> observable)
+        {
+            subscriptions.Add(observable.Subscribe(onNext: async nextValue => await InvokeAsync(() => StateHasChanged()).ConfigureAwait(false)));
         }
 
         #region IDisposable Support
