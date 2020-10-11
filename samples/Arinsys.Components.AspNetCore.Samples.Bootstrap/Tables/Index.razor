@@ -3,14 +3,14 @@
 @using Arinsys.Components.AspNetCore.Samples.Models
 @using Arinsys.Components.AspNetCore.Samples.Fakes
 
-<Table DataAccessor="_=> Task.FromResult(users)" TEntity="User" TTableDataFilters="Arinsys.Components.AspNetCore.Tables.TableDataFilters<User>" TColumnDefinition="Arinsys.Components.AspNetCore.Tables.ColumnDefinition<User>">
-    <HeadContent>
+<Table DataAccessor="GetData" TEntity="User" TTableDataFilters="Arinsys.Components.AspNetCore.Tables.TableDataFilters<User>">
+    <Head>
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
         </tr>
-    </HeadContent>
+    </Head>
     <Body>
         <tr>
             <td>@context.Id</td>
@@ -21,6 +21,9 @@
 </Table>
 
 @code{
-    
-    IEnumerable<User> users = FakeUser.ValidDefaults.Generate(10);
+    protected Task<IEnumerable<User>> GetData(Arinsys.Components.AspNetCore.Tables.TableDataFilters<User> tableDataFilters)
+    {
+        IEnumerable<User> users = FakeUser.ValidDefaults.Generate(10);
+        return Task.FromResult(users);
+    }
 }

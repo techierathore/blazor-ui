@@ -1,7 +1,6 @@
 ﻿namespace Arinsys.Components.AspNetCore.Bootstrap.Tables
 {
-    public partial class Table<TEntity, TColumnDefinition, TTableDataFilters> : AspNetCore.Tables.Table<TEntity, TColumnDefinition, TTableDataFilters>
-        where TColumnDefinition : AspNetCore.Tables.ColumnDefinition<TEntity>
+    public partial class Table<TEntity, TTableDataFilters> : AspNetCore.Tables.Table<TEntity, TTableDataFilters>
         where TTableDataFilters : AspNetCore.Tables.TableDataFilters<TEntity>, new()
     {
         public Table()

@@ -1,5 +1,4 @@
 ﻿@typeparam TEntity
-@typeparam TColumnDefinition
 @typeparam TTableDataFilters
 @inherits BaseComponent
 
@@ -18,19 +17,7 @@ else
 {
     <table class="@CssClass">
         <thead>
-            <tr>
-                @if (HeadContent is null)
-                {
-                    @foreach (var columnDefinition in ColumnDefinitions)
-                    {
-                        <th>@columnDefinition.Label</th>
-                    }
-                }
-                else
-                {
-                    @HeadContent
-                }
-            </tr>
+            @HeadContent
         </thead>
         <tbody>
             @foreach (var rowData in Data)

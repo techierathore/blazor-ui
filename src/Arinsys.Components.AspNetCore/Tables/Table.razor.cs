@@ -8,25 +8,14 @@ using System.Threading.Tasks;
 
 namespace Arinsys.Components.AspNetCore.Tables
 {
-    public class ColumnDefinition<TEntity>
-    {
-        public string Label { get; set; }
-        public Func<TEntity, object> Accessor { get; set; }
-    }
-
     public class TableDataFilters<TEntity>
     {
 
     }
 
-    public partial class Table<TEntity, TColumnDefinition, TTableDataFilters> : BaseComponent
-        where TColumnDefinition : ColumnDefinition<TEntity>
-        where TTableDataFilters : TableDataFilters<TEntity>, new()
+    public partial class Table<TEntity, TTableDataFilters> : BaseComponent where TTableDataFilters : TableDataFilters<TEntity>, new()
     {
-        internal readonly BehaviorSubject<object> filtersObservable = new BehaviorSubject<object>(null);
-
-        [Parameter]
-        public IEnumerable<TColumnDefinition> ColumnDefinitions { get; set; }
+        internal readonly BehaviorSubject<object> filtersUpdated = new BehaviorSubject<object>(null);
 
         [Parameter]
         public virtual Func<TTableDataFilters, Task<IEnumerable<TEntity>>> DataAccessor { get; set; }
@@ -35,16 +24,17 @@ namespace Arinsys.Components.AspNetCore.Tables
         public RenderFragment<TEntity> Body { get; set; }
 
         [Parameter]
-        public RenderFragment HeadContent { get; set; }
+        public RenderFragment Head { get; set; }
 
         [Parameter]
-        public RenderFragment LoadingContent { get; set; }
+        public RenderFragment Loading { get; set; }
 
-        public IObservable<TTableDataFilters> FiltersObservable => filtersObservable.Select(_ => TableDataFilters);
+        public IObservable<TTableDataFilters> FiltersUpdated => filtersUpdated.Select(_ => TableDataFilters);
         public TTableDataFilters TableDataFilters { get; private set; } = new TTableDataFilters();
-        public void TableDataFiltersUpdated()
+
+        public void TriggerFiltersUpdated()
         {
-            filtersObservable.OnNext(null);
+            filtersUpdated.OnNext(null);
         }
 
         protected IEnumerable<TEntity> Data { get; private set; }
