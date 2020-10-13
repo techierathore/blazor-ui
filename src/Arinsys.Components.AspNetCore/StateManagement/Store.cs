@@ -33,6 +33,10 @@ namespace Arinsys.Components.AspNetCore.StateManagement
 
         public IObservable<TProjection> Select<TProjection>() where TProjection : class
         {
+            if (typeof(TProjection) == typeof(TState))
+            {
+                return state.Select(currentState => currentState as TProjection);
+            }
             return state.Select(selectors.OfType<ISelector<TState, TProjection>>().Single().Projection);
         }
 
@@ -43,11 +47,14 @@ namespace Arinsys.Components.AspNetCore.StateManagement
             Reducer<TState, TAction> reducer = reducers.OfType<Reducer<TState, TAction>>().Single();
             if (reducer.ShouldReduceStateForAction(action))
             {
-                newState = reducer.Reduce(state.Value, action);
+                newState = reducer.Reduce(previousState, action);
             }
-            await Task.WhenAll(effects.OfType<Effect<TState, TAction>>()
-                .Where(x => x.ShouldReactToAction(action))
-                .Select(x => x.HandleAsync(previousState, newState, action)));
+
+            IEnumerable<Effect<TState, TAction>> eligibleEffects = effects.OfType<Effect<TState, TAction>>().Where(x => x.ShouldReactToAction(action));
+            if (eligibleEffects.Any())
+            {
+                await Task.WhenAll(eligibleEffects.Select(x => x.HandleAsync(previousState, newState, action)));
+            }
             state.OnNext(newState);
         }
     }
