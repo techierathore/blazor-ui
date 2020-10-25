@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arinsys.Components.AspNetCore.Samples.Bootstrap", "samples\Arinsys.Components.AspNetCore.Samples.Bootstrap\Arinsys.Components.AspNetCore.Samples.Bootstrap.csproj", "{542333D6-F0A0-4762-BEE8-FE83DADCB499}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arinsys.Components.AspNetCore.Tests", "tests\Arinsys.Components.AspNetCore.Tests\Arinsys.Components.AspNetCore.Tests.csproj", "{18CBF2D9-8DE9-4C71-9C7C-95EB9148223B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{542333D6-F0A0-4762-BEE8-FE83DADCB499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{542333D6-F0A0-4762-BEE8-FE83DADCB499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{542333D6-F0A0-4762-BEE8-FE83DADCB499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CBF2D9-8DE9-4C71-9C7C-95EB9148223B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CBF2D9-8DE9-4C71-9C7C-95EB9148223B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CBF2D9-8DE9-4C71-9C7C-95EB9148223B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CBF2D9-8DE9-4C71-9C7C-95EB9148223B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
